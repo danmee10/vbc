@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   get 'create_account', to: "sessions#new"
   get 'app', to: "angular#front_end"
 
+  namespace :api do
+    resources :cards, except: :new
+    resources :linkedin, only: :show
+  end
 end
