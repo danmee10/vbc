@@ -1,2 +1,7 @@
-<h1>Angular test</h1>
+<h1>My Cards</h1>
 
+<ul>
+  <li ng-repeat="card in cards">
+    <a ng-href="/vbc/{{card.id}}">{{card.created_at}}</a>
+  </li>
+</ul>

@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   get 'app', to: "angular#front_end"
 
   namespace :api do
-    resources :cards, except: :new
-    resources :linkedin, only: :show
+    resources :cards, only: [:create, :index]
+    resources :linkedin, param: :user_id, only: :show
   end
+
+  get 'vbc/:card_id', to: 'cards#show'
 end

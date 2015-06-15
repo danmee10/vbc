@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="card-display-container">
+      <div class="card-display">
+        <div class="top-image">
+          <img ng-src="<%= @card.image %>">
+        </div>
+
+        <div class="card-data">
+          <div class="name">
+            <%= @card.first_name %> <%= @card.last_name %>
+          </div>
+          <div class="email">
+            <%= @card.email %>
+          </div>
+          <div class="phone-number">
+            <%= @card.phone_number %>
+          </div>
+          <div class="description">
+            <%= @card.headline %>
+          </div>
+          <div class="company">
+            <%= @card.company %>
+          </div>
+          <div class="title">
+            <%= @card.title %>
+          </div>
+          <div class="skills">
+            <%= @card.skills %>
+          </div>
+          <div class="location">
+            <%= @card.specific_location %>, <%= @card.country.upcase %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

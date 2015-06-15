@@ -31,11 +31,14 @@ ActiveRecord::Schema.define(version: 20150614213004) do
     t.string   "company"
     t.string   "title"
     t.string   "skills"
-    t.string   "location"
+    t.string   "specific_location"
+    t.string   "country"
+    t.string   "email"
+    t.string   "phone_number"
     t.string   "image"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "users", force: :cascade do |t|
