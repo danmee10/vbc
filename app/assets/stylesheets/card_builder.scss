@@ -3,10 +3,21 @@ h1.page-title {
 }
 
 .row {
+  width: 900px;
+  margin: 0 auto;
   .create-card-form-container {
+    width: 50%;
+    float: left;
+    form {
+      margin: 0 auto;
+      width: 260px;
+    }
   }
   .card-display-container {
+    float: left;
+    width: 50%;
     .card-display {
+      margin: 0 auto;
       text-align: center;
       background-color: whitesmoke;
       width: 260px;
