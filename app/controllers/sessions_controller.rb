@@ -5,12 +5,13 @@ class SessionsController < ApplicationController
 
   def create
     auth = env["omniauth.auth"]
+    session[:user_data] = env["omniauth.auth"].extra.raw_info.to_hash
     unless @auth = Authorization.find_from_hash(auth)
       @auth = Authorization.create_from_hash(auth, current_user)
     end
     self.current_user = @auth.user
 
-    redirect_to "/app/#/my-cards", notice: "Welcome, #{current_user.name}."
+    redirect_to "/app/#/new-card", notice: "Welcome, #{current_user.name}."
   end
 
   def destroy
