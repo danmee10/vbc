@@ -8,7 +8,7 @@ app.controller('MyCardsCtrl', ['$scope', '$http', '$location', function ($scope,
       $scope.cards = data;
     }
   }).error(function(msg){
-    console.log("error --> ", msg);
+    console.log("Please contact support.");
   });
 
 }]);

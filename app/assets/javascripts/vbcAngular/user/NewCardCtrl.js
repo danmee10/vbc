@@ -2,12 +2,10 @@ app.controller('NewCardCtrl', ['$scope', '$http', '$location', function ($scope,
   'use strict';
 
   var url = '/api/linkedin/' + userId + '.json'
-  console.log("url -0-> ", url)
   $http.get(url).success(function(data){
-    console.log("data --> ", data);
     $scope.userData = data;
   }).error(function(msg){
-    console.log("message --> ", msg)
+    console.log("please contact support")
   });
 
   $scope.createCard = function() {
