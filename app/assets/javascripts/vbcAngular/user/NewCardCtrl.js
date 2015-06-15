@@ -9,7 +9,6 @@ app.controller('NewCardCtrl', ['$scope', '$http', '$location', function ($scope,
   });
 
   $scope.createCard = function() {
-    console.log("$scope.userData")
     var pDefaults = {
       'position': {
         'values': [
