@@ -1,0 +1,111 @@
+<h1 class="page-title">Create New Card</h1>
+
+<div class="row">
+  <div class="create-card-form-container">
+    <form ng-submit="createCard()">
+      <p>
+        <label for="pictureUrl">
+          <span>Picture Url: </span>
+          <input type="text" id="pictureUrl" ng-model="userData.pictureUrl" />
+        </label>
+      </p>
+      <p>
+        <label for="first-name">
+          <span>First Name: </span>
+          <input type="text" id="first-name" ng-model="userData.firstName" />
+        </label>
+      </p>
+      <p>
+        <label for="last-name">
+          <span>Last Name: </span>
+          <input type="text" id="last-name" ng-model="userData.lastName" />
+        </label>
+      </p>
+      <p>
+        <label for="email-address">
+          <span>Email Address: </span>
+          <input type="text" id="email-address" ng-model="userData.emailAddress" />
+        </label>
+      </p>
+      <p>
+        <label for="phone-number">
+          <span>Phone Number: </span>
+          <input type="text" id="phone-number" ng-model="userData.phoneNumber" />
+        </label>
+      </p>
+      <p>
+        <label for="headline">
+          <span>Description: </span>
+          <input type="text" id="headline" ng-model="userData.headline" />
+        </label>
+      </p>
+      <p>
+        <label for="company">
+          <span>Company: </span>
+          <input type="text" id="company" ng-model="userData.positions.values[0].company.name" />
+        </label>
+      </p>
+      <p>
+        <label for="title">
+          <span>Title: </span>
+          <input type="text" id="title" ng-model="userData.positions.values[0].title" />
+        </label>
+      </p>
+      <p>
+        <label for="skills">
+          <span>Skills: </span>
+          <textarea id="skills" ng-model="userData.positions.values[0].summary"></textarea>
+        </label>
+      </p>
+      <p>
+        <label for="specific-location">
+          <span>Specific Location: </span>
+          <input type="text" id="specific-location" ng-model="userData.location.name" />
+        </label>
+      </p>
+      <p>
+        <label for="country">
+          <span>Country: </span>
+          <input type="text" id="country" ng-model="userData.location.country.code" />
+        </label>
+      </p>
+
+      <button type="submit">Save Card</button>
+    </form>
+  </div>
+
+  <div class="card-display-container">
+    <div class="card-display">
+      <div class="top-image">
+        <img ng-src="{{userData.pictureUrl}}">
+      </div>
+
+      <div class="card-data">
+        <div class="name">
+          {{userData.firstName}} {{userData.lastName}}
+        </div>
+        <div class="email">
+          {{userData.emailAddress}}
+        </div>
+        <div class="phone-number">
+          {{userData.phoneNumber}}
+        </div>
+        <div class="description">
+          {{userData.headline}}
+        </div>
+        <div class="company">
+          {{userData.positions.values[0].company.name}}
+        </div>
+        <div class="title">
+          {{userData.positions.values[0].title}}
+        </div>
+        <div class="skills">
+          {{userData.positions.values[0].summary}}
+        </div>
+        <div class="location">
+          {{userData.location.name}}, {{userData.location.country.code | uppercase}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

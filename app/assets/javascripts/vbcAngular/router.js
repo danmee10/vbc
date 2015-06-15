@@ -7,6 +7,11 @@ app.config([
         url: '/my-cards',
         templateUrl: '/user/_myCards.html',
         controller: 'MyCardsCtrl'
+      })
+      .state('newCard', {
+        url: '/new-card',
+        templateUrl: '/user/_newCard.html',
+        controller: 'NewCardCtrl'
       });
 
     $urlRouterProvider.when('', '/');
