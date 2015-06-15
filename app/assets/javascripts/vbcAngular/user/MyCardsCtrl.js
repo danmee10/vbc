@@ -1,6 +1,16 @@
-app.controller('MyCardsCtrl', ['$scope', function ($scope){
+app.controller('MyCardsCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location){
   'use strict';
-  $scope.test = "THIS IS A TEZT"
 
-  console.log("MyCardsCtrl")
+
+  $http.get('/api/cards.json', {params:{'user_id': userId}}).success(function(data){
+    console.log("data --> ", data);
+    if (data.length === 0) {
+      $location.path('/new-card');
+    } else {
+      $scope.cards = data;
+    }
+  }).error(function(msg){
+    console.log("error --> ", msg);
+  });
+
 }]);
