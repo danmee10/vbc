@@ -9,6 +9,52 @@ app.controller('NewCardCtrl', ['$scope', '$http', '$location', function ($scope,
   });
 
   $scope.createCard = function() {
+    console.log("$scope.userData")
+    var pDefaults = {
+      'position': {
+        'values': [
+          {
+            'company': null,
+            'title': null,
+            'summary': null
+          }
+        ]
+      }
+    }
+    var lDefaults = {
+      'location': {
+        'country': {
+          'code': null
+        }
+      },
+      'name': null
+    }
+    var lcDefaults = {
+      'location': {
+        'country': {
+          'code': null
+        }
+      }
+    }
+    var lnDefaults = {
+      'location': {
+        'name': null
+      }
+    }
+
+
+    if (_.isUndefined($scope.userData.position)) {
+      _.merge($scope.userData, pDefaults);
+    }
+    if (_.isUndefined($scope.userData.location)) {
+      _.merge($scope.userData, lDefaults);
+    } else if (_.isUndefined($scope.userData.location.name)) {
+      _.merge($scope.userData, lnDefaults);
+    } else if (_.isUndefined($scope.userData.location.country)) {
+      _.merge($scope.userData, lcDefaults);
+    }
+
+
     $http.post('/api/cards.json', {card_fields: $scope.userData, authenticity_token: token, user_id: userId} ).success(function(){
       $location.path('/my-cards');
     }).error(function(){

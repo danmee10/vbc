@@ -26,7 +26,7 @@
       <%= @card.skills %>
     </div>
     <div class="location">
-      <%= @card.specific_location %>, <%= @card.country.upcase %>
+      <%= format_location(@card.specific_location, @card.country.upcase) %>
     </div>
   </div>
 </div>

@@ -13,13 +13,13 @@ class Api::CardsController < Api::BaseController
       email: params['card_fields']['emailAddress'],
       phone_number: params['card_fields']['phoneNumber'],
       headline: params['card_fields']['headline'],
-      company: params['card_fields']['positions']['values'][0]['company']['name'],
-      title: params['card_fields']['positions']['values'][0]['title'],
-      skills: params['card_fields']['positions']['values'][0]['summary'],
       image: params['card_fields']['pictureUrl'],
+      user_id: params['user_id'].to_i,
       specific_location: params['card_fields']['location']['name'],
       country: params['card_fields']['location']['country']['code'],
-      user_id: params['user_id'].to_i
+      company: params['card_fields']['positions']['values'][0]['company']['name'],
+      title: params['card_fields']['positions']['values'][0]['title'],
+      skills: params['card_fields']['positions']['values'][0]['summary']
     }
 
     card = Card.new(card_params)
