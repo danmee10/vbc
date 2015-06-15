@@ -1,4 +1,4 @@
-app.controller('NewCardCtrl', ['$scope', '$http', function ($scope, $http){
+app.controller('NewCardCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location){
   'use strict';
 
   var url = '/api/linkedin/' + userId + '.json'
@@ -11,17 +11,13 @@ app.controller('NewCardCtrl', ['$scope', '$http', function ($scope, $http){
   });
 
   $scope.createCard = function() {
-    console.log("creatingCard");
+    $http.post('/api/cards.json', {card_fields: $scope.userData, authenticity_token: token, user_id: userId} ).success(function(){
+      $location.path('/my-cards');
+    }).error(function(){
+      console.log("please contact support")
+    });
   }
 
- // {Name, +
-  // Description +
-  // , Company +
-  // , Title +
-  // , Skills +
-  // , Location +
-  // , Image +
-  // , etc}
 
 
 }]);

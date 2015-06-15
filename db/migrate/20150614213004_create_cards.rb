@@ -7,7 +7,10 @@ class CreateCards < ActiveRecord::Migration
       t.string :company
       t.string :title
       t.string :skills
-      t.string :location
+      t.string :specific_location
+      t.string :country
+      t.string :email
+      t.string :phone_number
       t.string :image
       t.references :user
 
