@@ -4,7 +4,7 @@ module ApplicationHelper
     if specific.present? && country.present?
       "#{specific}, #{country}"
     else
-      "#{specific} #{country}".strip
+      "#{specific} #{country.try(:upcase)}".strip
     end
   end
 end
