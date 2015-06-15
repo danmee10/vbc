@@ -17,8 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_user
-    param_id = params['user_id'] || params['id']
-    if current_user.id.to_s != param_id
+    if current_user.id.to_s != params['user_id']
       respond_to do |format|
         format.html {
           flash[:error] = "You are not authorized to view that page."
@@ -28,5 +27,4 @@ class ApplicationController < ActionController::Base
       end
     end
   end
-
 end
