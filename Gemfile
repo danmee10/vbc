@@ -27,6 +27,7 @@ gem 'omniauth'
 gem 'omniauth-linkedin-oauth2'
 
 # misc
+gem 'responders'
 gem 'awesome_print'
 gem 'faraday'
 group :production do
