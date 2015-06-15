@@ -3,12 +3,6 @@ app.controller('NewCardCtrl', ['$scope', '$http', '$location', function ($scope,
 
   var url = '/api/linkedin/' + userId + '.json'
   $http.get(url).success(function(data){
-    $scope.userData = data;
-  }).error(function(msg){
-    console.log("please contact support")
-  });
-
-  $scope.createCard = function() {
     var pDefaults = {
       'position': {
         'values': [
@@ -40,6 +34,7 @@ app.controller('NewCardCtrl', ['$scope', '$http', '$location', function ($scope,
         'name': null
       }
     }
+    $scope.userData = data;
 
 
     if (_.isUndefined($scope.userData.position)) {
@@ -52,6 +47,11 @@ app.controller('NewCardCtrl', ['$scope', '$http', '$location', function ($scope,
     } else if (_.isUndefined($scope.userData.location.country)) {
       _.merge($scope.userData, lcDefaults);
     }
+  }).error(function(msg){
+    console.log("please contact support")
+  });
+
+  $scope.createCard = function() {
 
 
     $http.post('/api/cards.json', {card_fields: $scope.userData, authenticity_token: token, user_id: userId} ).success(function(){
