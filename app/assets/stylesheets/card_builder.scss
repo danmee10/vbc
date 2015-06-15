@@ -16,20 +16,20 @@ h1.page-title {
   .card-display-container {
     float: left;
     width: 50%;
-    .card-display {
-      margin: 0 auto;
-      text-align: center;
-      background-color: whitesmoke;
-      width: 260px;
-      height: 500px;
-      border-radius: 15px;
-      border: 1px solid grey;
-      .top-image {
-        img {
-          margin: 50px 0px;
-          border-radius: 5px;
-        }
-      }
+  }
+}
+.card-display {
+  margin: 0 auto;
+  text-align: center;
+  background-color: whitesmoke;
+  width: 260px;
+  height: 500px;
+  border-radius: 15px;
+  border: 1px solid grey;
+  .top-image {
+    img {
+      margin: 50px 0px;
+      border-radius: 5px;
     }
   }
 }

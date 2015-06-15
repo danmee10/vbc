@@ -2,6 +2,6 @@
 
 <ul>
   <li ng-repeat="card in cards">
-    <a ng-href="/vbc/{{card.id}}">{{card.created_at}}</a>
+    <a ng-href="/vbc/{{card.id}}">{{ card.created_at | date : 'M/d/yy - h:mm:ss a' : mst }}</a>
   </li>
 </ul>
